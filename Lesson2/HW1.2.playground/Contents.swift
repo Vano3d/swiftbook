@@ -66,6 +66,7 @@ let currentYear = 2021
 
 let monthDifference = monthOfBirth - currentMonth
 let dayDifference = dayOfBirth - currentDay
+
 let monthInYear = 12
 let daysInMonth = 30
 let secondsInDay = 86400
