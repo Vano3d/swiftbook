@@ -9,7 +9,45 @@ import Foundation
  
  В случае возникновения ситуации **A** необходимо "Выключить все электрические приборы". **B** - "Закрыть входные двери и окна". **C** - "Соблюдать спокойствие"
  */
+//let situation = "C"
+//let activities: String
+//
+//let instructionA = "Выключить все электрические приборы\n"
+//let instructionB = "Закрыть входные двери и окна\n"
+//let instructionC = "Соблюдать спокойствие\n"
+//
+//switch situation {
+//case "C":
+//    activities = instructionC
+//    print(activities)
+//
+//case "B":
+//    activities = instructionC + instructionB
+//    print(activities)
+//
+//case "A":
+//    activities = instructionC + instructionB + instructionA
+//    print(activities)
+//default:
+//    print("Error situation code")
+//}
 
+let situation = "4"
 
+let instructionA = "Выключить все электрические приборы\n"
+let instructionB = "Закрыть входные двери и окна\n"
+let instructionC = "Соблюдать спокойствие\n"
 
+switch situation {
+case "A":
+    print(instructionA)
+    fallthrough
+case "B":
+    print(instructionB)
+    fallthrough
+case "C":
+    print(instructionC)
+default:
+    print("Error situation code")
+}
 //: [Ранее: Задание 2](@previous)  |  задание 3 из 4  |  [Далее: Задание 4](@next)
