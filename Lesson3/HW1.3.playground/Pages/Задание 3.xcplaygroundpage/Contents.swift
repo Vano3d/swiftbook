@@ -9,22 +9,18 @@ import Foundation
  
  В случае возникновения ситуации **A** необходимо "Выключить все электрические приборы". **B** - "Закрыть входные двери и окна". **C** - "Соблюдать спокойствие"
  */
-let situation = "B"
-
-let instructionA = "Выключить все электрические приборы\n"
-let instructionB = "Закрыть входные двери и окна\n"
-let instructionC = "Соблюдать спокойствие\n"
+let situation = "A"
 
 switch situation {
 case "A":
-    print(instructionA)
+    print("Выключить все электрические приборы\n")
     fallthrough
 case "B":
-    print(instructionB)
+    print("Закрыть входные двери и окна\n")
     fallthrough
 case "C":
-    print(instructionC)
+    print("Соблюдать спокойствие\n")
 default:
-    print("Error situation code")
+    break
 }
 //: [Ранее: Задание 2](@previous)  |  задание 3 из 4  |  [Далее: Задание 4](@next)

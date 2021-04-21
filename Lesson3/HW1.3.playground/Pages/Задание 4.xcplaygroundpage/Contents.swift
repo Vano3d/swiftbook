@@ -7,6 +7,23 @@ import Foundation
  В этом задании вам необходимо отсортировать конфеты **M&M's** по цвету и по начинке. В первую кучку нужно собрать красные конфеты с шоколадом внутри. Во вторую кучку собирите все желтые конфеты с орехами. А втретью кучку коричневые и зеленые с шоколадом внутри. Нужно реализовать только логику для сортировки конфет. Использовать картежи при этом не нужно. 
  
  */
+// -== Самый простой вариант ==-
+
+let color = "коричневый" // красный, жёлтый, коричневый, зелёный
+let filling = "шоколад" // шоколад, орех
+
+switch color {
+case "красный" where filling == "шоколад":
+    print("В первую кучку")
+case "жёлтый" where filling == "орех":
+    print("Во вторую кучку")
+case "зелёный" where filling == "шоколад", "коричневый" where filling == "шоколад":
+    print("В третью кучку")
+default:
+    print("В помойку")
+}
+
+
 // -== Простой вариант ==-
 
 //let red = "красный"
@@ -56,36 +73,36 @@ import Foundation
 
 // -= Вариант с перебором массива = -
 
-let colors = ["красный", "жёлтый", "коричневый", "зелёный"]
-let filling = ["орех", "шоколад"]
-var countOne: Int = 0
-var countTwo: Int = 0
-var countThree: Int = 0
-var countTrash: Int = 0
-
-for color in colors {
-    for fill in filling {
-        switch fill {
-        case "шоколад" where color == "красный":
-            print("# 1: \(color) \(fill) в первую кучку")
-            countOne += 1
-        case "орех" where color == "жёлтый":
-            print("# 2: \(color) \(fill) во вторую кучку")
-            countTwo += 1
-        case "шоколад" where color == "коричневый" || color == "зелёный":
-            print("# 3: \(color) \(fill) в третью кучку")
-            countThree += 1
-        default:
-            print("\(color) \(fill) В помойку :)")
-            countTrash += 1
-        }
-    }
-}
-
-print("\nКоличество конфеток в 1-й кучке: \(countOne)")
-print("Количество конфеток во 2-й кучке: \(countTwo)")
-print("Количество конфеток в 3-й кучке: \(countThree)")
-print("Количество конфеток в помойке: \(countTrash)")
+//let colors = ["красный", "жёлтый", "коричневый", "зелёный"]
+//let filling = ["орех", "шоколад"]
+//var countOne: Int = 0
+//var countTwo: Int = 0
+//var countThree: Int = 0
+//var countTrash: Int = 0
+//
+//for color in colors {
+//    for fill in filling {
+//        switch fill {
+//        case "шоколад" where color == "красный":
+//            print("# 1: \(color) \(fill) в первую кучку")
+//            countOne += 1
+//        case "орех" where color == "жёлтый":
+//            print("# 2: \(color) \(fill) во вторую кучку")
+//            countTwo += 1
+//        case "шоколад" where color == "коричневый" || color == "зелёный":
+//            print("# 3: \(color) \(fill) в третью кучку")
+//            countThree += 1
+//        default:
+//            print("\(color) \(fill) В помойку :)")
+//            countTrash += 1
+//        }
+//    }
+//}
+//
+//print("\nКоличество конфеток в 1-й кучке: \(countOne)")
+//print("Количество конфеток во 2-й кучке: \(countTwo)")
+//print("Количество конфеток в 3-й кучке: \(countThree)")
+//print("Количество конфеток в помойке: \(countTrash)")
 
 
 
