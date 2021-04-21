@@ -35,23 +35,58 @@ import Foundation
 
 // -== Вариант со словарём ==-
 
-let colors = ["red": "красный", "yellow": "жёлтый", "brown": "коричневый", "green": "зелёный"]
-let filling = ["nut": "орех", "chokolate": "шоколад"]
+//let colors = ["red": "красный", "yellow": "жёлтый", "brown": "коричневый", "green": "зелёный"]
+//let filling = ["nut": "орех", "chokolate": "шоколад"]
+//
+//let candyColor = colors["red"]
+//let candyFilling = filling["chokolate"]
+//
+//
+//switch candyFilling {
+//case filling["chokolate"] where candyColor == colors["red"]:
+//    print("В первую кучку")
+//case filling["nut"] where candyColor == colors["yellow"]:
+//    print("Во вторую кучку")
+//case filling["chokolate"] where candyColor == colors["brown"] || candyColor == colors["green"]:
+//    print("В третью кучку")
+//default:
+//    print("В помойку :)")
+//}
 
-let candyColor = colors["red"]
-let candyFilling = filling["chokolate"]
 
+// Вариант с перебором массивом!
 
-switch candyFilling {
-case filling["chokolate"] where candyColor == colors["red"]:
-    print("В первую кучку")
-case filling["nut"] where candyColor == colors["yellow"]:
-    print("Во вторую кучку")
-case filling["chokolate"] where candyColor == colors["brown"] || candyColor == colors["green"]:
-    print("В третью кучку")
-default:
-    print("В помойку :)")
+let colors = ["красный", "жёлтый", "коричневый", "зелёный"]
+let filling = ["орех", "шоколад"]
+var countOne: Int = 0
+var countTwo: Int = 0
+var countThree: Int = 0
+var countTrash: Int = 0
+
+for color in colors {
+    for fill in filling {
+        switch fill {
+        case "шоколад" where color == "красный":
+            print("# 1: \(color) \(fill) в первую кучку")
+            countOne += 1
+        case "орех" where color == "жёлтый":
+            print("# 2: \(color) \(fill) во вторую кучку")
+            countTwo += 1
+        case "шоколад" where color == "коричневый" || color == "зелёный":
+            print("# 3: \(color) \(fill) в третью кучку")
+            countThree += 1
+        default:
+            print("\(color) \(fill) В помойку :)")
+            countTrash += 1
+        }
+    }
 }
+
+print("\nКоличество конфеток в 1-й кучке: \(countOne)")
+print("Количество конфеток во 2-й кучке: \(countTwo)")
+print("Количество конфеток в 3-й кучке: \(countThree)")
+print("Количество конфеток в помойке: \(countTrash)")
+
 
 
 
