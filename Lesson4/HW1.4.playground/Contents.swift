@@ -7,12 +7,12 @@ import UIKit
  
  > Cумма вклада увеличивается с каждым годом и процент нужно считать уже от увелеченной суммы.
   */
-let amount: Double = 500000
-let period = 5
-let rate = 11
+let amount: Double = 500000 // начальная сумма
+let period = 5 // годы вклада
+let rate = 11 // процентная ставка
 
-var profit: Double = 0
-var deposit = amount
+var profit: Double = 0 // процент от накопительного остатка
+var deposit = amount // накопительный остаток в конце срока вклада
 
 for _ in 1...period {
     profit = deposit * Double(rate) / 100
@@ -71,9 +71,9 @@ for count in 1...10 {
  ## Задание 4
   На 10 метровый столб лезет черепашка. За день она забирается на два метра, за ночь съезжает на один. Определите при помощи цикла, через сколько дней она заберетсья на столб. Подумайте над тем, какой цикл использовать в этой ситуации.
  */
-var dailyProgress = 0
-var afterNightProgress = 0
-var days = 0
+var dailyProgress = 0 // сколько останется после n-го дня
+var afterNightProgress = 0 // сколько останется после n-й ночи
+var days = 0 // кол-во дней
 
 while dailyProgress < 10 {
     days += 1
