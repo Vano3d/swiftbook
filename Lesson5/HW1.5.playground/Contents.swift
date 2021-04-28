@@ -66,7 +66,7 @@ func isEven (_ number: Int) -> Bool {
     }
 }
 
-let sdf = isEven
+isEven(4)
 
 
 /*:
@@ -126,13 +126,12 @@ func filterWithoutEven (someArray: [Int], closure: (Int) -> Bool) -> [Int]  {
     var filteredArray: [Int] = []
 
     for element in someArray {
-        if closure (element) {
+        if !closure (element) {
             filteredArray.append(element)
         }
     }
    return filteredArray
 
 }
-
-//filterWithoutEven(someArray: createArray(1, 100))
+    
 filterWithoutEven(someArray: createArray(1, 100), closure: isEven)
