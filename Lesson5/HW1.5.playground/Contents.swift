@@ -66,7 +66,7 @@ func isEven (_ number: Int) -> Bool {
     }
 }
 
-isEven(9)
+let sdf = isEven
 
 
 /*:
@@ -105,19 +105,34 @@ createArray(1, 100)
  */
  //тут фантазия закончилась ((((
 
-func filterWithoutEven (_ someArray: [Int]) -> [Int]  {
+//func filterWithoutEven (someArray: [Int]) -> [Int]  {
+//
+//    var filteredArray: [Int] = []
+//
+//    for element in someArray {
+//        if element % 2 != 0 {
+//            filteredArray.append(element)
+//        }
+//    }
+//   return filteredArray
+//
+//}
+//
+//filterWithoutEven(someArray: createArray(1, 100))
+
+
+func filterWithoutEven (someArray: [Int], closure: (Int) -> Bool) -> [Int]  {
+    
     var filteredArray: [Int] = []
 
-    for i in someArray {
-        if i % 2 != 0 {
-            filteredArray.append(i)
+    for element in someArray {
+        if closure (element) {
+            filteredArray.append(element)
         }
     }
    return filteredArray
 
 }
 
-
-filterWithoutEven(createArray(1, 30))
-
-
+//filterWithoutEven(someArray: createArray(1, 100))
+filterWithoutEven(someArray: createArray(1, 100), closure: isEven)
