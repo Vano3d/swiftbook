@@ -58,7 +58,7 @@ howMuchMoneyInMyWallet(fifty: 15, hundred: 25, fiveHundred: 5, thousand: 6, five
  ## Задание 3
  3.1 Создайте функцию, которая определяет является ли число четным. В случае, если число является четным, функция должна возвращать `true`. Иначе - `false`.
  */
-func isEven (number: Int) -> Bool {
+func isEven (_ number: Int) -> Bool {
     if number % 2 == 0 {
         return true
     } else {
@@ -66,7 +66,7 @@ func isEven (number: Int) -> Bool {
     }
 }
 
-isEven(number: 9)
+isEven(9)
 
 
 /*:
@@ -86,7 +86,7 @@ isDividedOnThree(number: 11)
 /*:
  3.3 Создайте функцию, которая возвращает возрастающий массив чисел в интервале от *x* до *y*. Данный интервал должен задаваться при вызове функции при помощи параметров. Вы должны самостоятельно реализовать логику создания массива. Если хотите усложить задание, то можете возвращать несортированный массив чисел в заданном интервале. Главное, что бы числа были уникальными и не повторялись. При этом количество элементов массива должно соответсвовать количеству элементов заданного интервала.
  */
-func createArray (start: Int, end: Int) -> [Int] {
+func createArray (_ start: Int, _ end: Int) -> [Int] {
     var newArray: [Int] = []
     for element in start...end {
         newArray.append(element)
@@ -97,17 +97,27 @@ func createArray (start: Int, end: Int) -> [Int] {
 /*:
 3.4 Создайте массив чисел от *1* до *100*, используя для этого вышесозданную функцию
  */
-createArray(start: 1, end: 100)
+createArray(1, 100)
 
 
 /*:
  3.5 Создайте функцию для фильтрации переданного в неё массива и отфильтруйте при помощи неё массив из задания **3.4**. Функция должна возвращать новый массив без четных чисел или без чисел, кратных трем. Для определения фильтруемых значений используейте ранее созданные функции из заданий **3.1** и **3.2**.
  */
-//тут фантазия закончилась ((((
+ //тут фантазия закончилась ((((
 
-func filterWithoutEven (someArray: [Int]) -> [Int]  {
-    
+func filterWithoutEven (_ someArray: [Int]) -> [Int]  {
+    var filteredArray: [Int] = []
+
+    for i in someArray {
+        if i % 2 != 0 {
+            filteredArray.append(i)
+        }
+    }
+   return filteredArray
+
 }
 
 
-filterWithoutEven(someArray: createArray(start: 1, end: 100))
+filterWithoutEven(createArray(1, 30))
+
+
