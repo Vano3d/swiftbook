@@ -103,22 +103,6 @@ createArray(1, 100)
 /*:
  3.5 Создайте функцию для фильтрации переданного в неё массива и отфильтруйте при помощи неё массив из задания **3.4**. Функция должна возвращать новый массив без четных чисел или без чисел, кратных трем. Для определения фильтруемых значений используейте ранее созданные функции из заданий **3.1** и **3.2**.
  */
- //тут фантазия закончилась ((((
-
-//func filterWithoutEven (someArray: [Int]) -> [Int]  {
-//
-//    var filteredArray: [Int] = []
-//
-//    for element in someArray {
-//        if element % 2 != 0 {
-//            filteredArray.append(element)
-//        }
-//    }
-//   return filteredArray
-//
-//}
-//
-//filterWithoutEven(someArray: createArray(1, 100))
 
 
 func filterWithoutEven (someArray: [Int], even: (Int) -> Bool) -> [Int]  {
