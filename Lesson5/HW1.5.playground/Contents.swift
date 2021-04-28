@@ -37,19 +37,19 @@ for (key, value) in gameResult {
  ## Задание 2
  Создайте функцию, которая считает общую сумму денег, хранящихся в кошельке. Вызовите функцию и передайте в неё кошелек с деньгами. В кошельке могут храниться купюры различного достоинства от 50 до 5000 рублей.
  */
-func howMuchMoneyInMyWallet (fifty f: Int = 0,
-                             hundred h: Int = 0,
-                             twoHundred th: Int = 0,
-                             fiveHundred fh: Int = 0,
-                             thousand t: Int = 0,
-                             fiveThousand ft: Int = 0) {
 
-    
-    let sum = f * 50 + h * 100 + th * 200 + fh * 500 + t * 1000 + ft * 5000
-    print("\n\(sum)")
+let walletArray = [50: 15, 100: 25, 500: 5, 1000: 6, 5000: 4]
+var sum = 0
+
+func howMuchMoneyInMyWallet (array: [Int:Int]) -> Int {
+    for (key, value) in array {
+        sum += (key * value)
+    }
+    return sum
 }
 
-howMuchMoneyInMyWallet(fifty: 15, hundred: 25, fiveHundred: 5, thousand: 6, fiveThousand: 2)
+let amount = howMuchMoneyInMyWallet(array: walletArray)
+print("\nВ кошельке \(amount) денег")
 
 
 
@@ -103,6 +103,27 @@ createArray(1, 100)
 /*:
  3.5 Создайте функцию для фильтрации переданного в неё массива и отфильтруйте при помощи неё массив из задания **3.4**. Функция должна возвращать новый массив без четных чисел или без чисел, кратных трем. Для определения фильтруемых значений используейте ранее созданные функции из заданий **3.1** и **3.2**.
  */
+// Вариант по заданию
+
+//func filterWithoutEven (someArray: [Int], even: (Int) -> Bool) -> [Int]  {
+//
+//    var filteredArray: [Int] = []
+//
+//    for element in someArray {
+//        if !even (element) {
+//            filteredArray.append(element)
+//        }
+//    }
+//   return filteredArray
+//
+//}
+//
+//filterWithoutEven(someArray: createArray(1, 100), even: isEven)
+
+
+
+// Вариант с closure
+
 
 func filterWithoutEven (someArray: [Int], even: (Int) -> Bool) -> [Int]  {
     
@@ -117,5 +138,4 @@ func filterWithoutEven (someArray: [Int], even: (Int) -> Bool) -> [Int]  {
 
 }
     
-filterWithoutEven(someArray: createArray(1, 100), even: isEven)
-
+filterWithoutEven(someArray: createArray(1, 100), even: {$0 % 2 == 0})
