@@ -121,12 +121,12 @@ createArray(1, 100)
 //filterWithoutEven(someArray: createArray(1, 100))
 
 
-func filterWithoutEven (someArray: [Int], closure: (Int) -> Bool) -> [Int]  {
+func filterWithoutEven (someArray: [Int], even: (Int) -> Bool) -> [Int]  {
     
     var filteredArray: [Int] = []
 
     for element in someArray {
-        if !closure (element) {
+        if !even (element) {
             filteredArray.append(element)
         }
     }
@@ -134,4 +134,5 @@ func filterWithoutEven (someArray: [Int], closure: (Int) -> Bool) -> [Int]  {
 
 }
     
-filterWithoutEven(someArray: createArray(1, 100), closure: isEven)
+filterWithoutEven(someArray: createArray(1, 100), even: isEven)
+
