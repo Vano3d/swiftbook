@@ -17,7 +17,7 @@ import UIKit
  
  - Игра с АкБарс - 1:2
  */
-let gameResult: [String : [String]] = ["Салават Юлаев" : ["3:6", "5:5", "N/A"],
+let gameResult = ["Салават Юлаев" : ["3:6", "5:5", "N/A"],
                                      "Авангард" : ["2:1"],
                                      "АкБарс" : ["3:3", "1:2"]]
 
@@ -29,16 +29,12 @@ for (key, value) in gameResult {
 
 
 
-
-
-
-
 /*:
  ## Задание 2
  Создайте функцию, которая считает общую сумму денег, хранящихся в кошельке. Вызовите функцию и передайте в неё кошелек с деньгами. В кошельке могут храниться купюры различного достоинства от 50 до 5000 рублей.
  */
 
-let walletArray = [50: 15, 100: 25, 500: 5, 1000: 6, 5000: 4]
+let walletArray = [50:15, 100:25, 500:5, 1000:6, 5000:4]
 var sum = 0
 
 func howMuchMoneyInMyWallet (array: [Int:Int]) -> Int {
@@ -59,28 +55,22 @@ print("\nВ кошельке \(amount) денег")
  3.1 Создайте функцию, которая определяет является ли число четным. В случае, если число является четным, функция должна возвращать `true`. Иначе - `false`.
  */
 func isEven (_ number: Int) -> Bool {
-    if number % 2 == 0 {
-        return true
-    } else {
-        return false
+    number % 2 == 0
+        
     }
-}
 
-isEven(4)
+isEven(3)
 
 
 /*:
 3.2 Создайте функцию, которая определяет делится ли число на *3* без остатка. Функция так же должна возвращать булево значение.
 */
 func isDividedOnThree (number: Int) -> Bool {
-    if number % 3 == 0 {
-        return true
-    } else {
-        return false
-    }
+    number % 3 == 0
+    
 }
 
-isDividedOnThree(number: 11)
+isDividedOnThree(number: 12)
 
 
 /*:
@@ -138,4 +128,11 @@ func filterWithoutEven (someArray: [Int], even: (Int) -> Bool) -> [Int]  {
 
 }
     
-filterWithoutEven(someArray: createArray(1, 100), even: {$0 % 2 == 0})
+let modTwo = filterWithoutEven(someArray: createArray(1, 100), even: {$0 % 2 == 0})
+let modThree = filterWithoutEven(someArray: createArray(1, 100), even: {$0 % 3 == 0})
+
+print("\nСписок из \(modTwo.count) элементов, которые не делятся на 2:")
+print(modTwo)
+print("\nСписок из \(modThree.count) элементов, которые не делятся на 3:")
+print(modThree)
+
