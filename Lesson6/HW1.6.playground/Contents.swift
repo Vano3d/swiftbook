@@ -95,7 +95,7 @@ class Shape {
     }
     
     var description: String {
-        "\nПлощадь фигуры \(type(of: self)) равна \(square), периметр (длина) равен(а) \(perimeter)"
+        "\nПлощадь фигуры \(type(of: self)) равна \(square), периметр (длина) равен(а) \(perimeter)\n"
     }
     
 }
@@ -112,7 +112,6 @@ class Circle: Shape {
     
     }
 }
-
 
 
 class Rectangle: Shape {
@@ -160,31 +159,53 @@ print(ellipce.description)
  - `surname`
  */
 class Employee {
-    var salary: Int = 0
-    var name = ""
-    var surname = ""
+    var name: String
+    var surname: String
+    var salary: Int
     
+    init(_ name: String,_ surname: String,_ salary: Int) {
+        self.name = name
+        self.surname = surname
+        self.salary = salary
+    }
 }
-
-Employee.init()
-
 
 
 //: 3.2 Создайте массив `names` со следующими именами: *John*, *Aaron*, *Tim*, *Ted*, *Steven*. И еще один массив `surnames` со следующими фамилиями: *Smith*, *Dow*, *Isaacson*, *Pennyworth*, *Jankins*. Массивы должны быть созданы вне класса.
 let names = ["John", "Aaron", "Tim", "Ted", "Steven"]
 let surnames = ["Smith", "Dow", "Isaacson", "Pennyworth", "Jankins"]
 
-var employees: [String] = []
 
 
 //: 3.3 Объявите массив `employees` и создайте цикл, в котором он заполняется десятью объектами класса `Employee` таким образом, что свойства `name` и `surname` инициализируются случайными именами и фамилиями из массивов `names` и `surnames`, соответственно. Свойство `salary` (зарплата) тоже должно генерироваться в случайном диапазоне от *$1000* до *$2000*
 
+var employees = [Employee]()
+
+for _ in 0...9 {
+    let randNames = names.randomElement()!
+    let randSurNames = surnames.randomElement()!
+    let randSalary = Int.random(in: 1000...2000)
+    let newEmployee = Employee(randNames, randSurNames, randSalary)
+    employees.append(newEmployee)
+}
 
 
 //: 3.4 Переберите массив `employees` и выведите информацию по каждому сотруднику в виде: «<имя> <фимилия>’s salary is $<... >»
-
+for employee in employees {
+  print("\(employee.name) \(employee.surname) salary is \(employee.salary)")
+}
 
 
 //: 3.5 Создайте еще один массив на основе `employees`, который включает только тех работников, чья зарплата чётная. Выведите информацию по каждому сотруднику с четной зарплатой, как в пункте 3.4
+print("\n")
+var evenEmployees = [Employee]()
+
+for employee in employees {
+    if employee.salary % 2 == 0 {
+        let evenEmployee = Employee(employee.name, employee.surname, employee.salary)
+        evenEmployees.append(evenEmployee)
+        print("\(evenEmployee.name) \(evenEmployee.surname) salary is \(evenEmployee.salary)")
+    }
+}
 
 
