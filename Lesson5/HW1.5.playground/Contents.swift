@@ -18,8 +18,8 @@ import UIKit
  - Игра с АкБарс - 1:2
  */
 let gameResult = ["Салават Юлаев" : ["3:6", "5:5", "N/A"],
-                                     "Авангард" : ["2:1"],
-                                     "АкБарс" : ["3:3", "1:2"]]
+                  "Авангард" : ["2:1"],
+                  "АкБарс" : ["3:3", "1:2"]]
 
 for (key, value) in gameResult {
     for item in value {
@@ -35,9 +35,10 @@ for (key, value) in gameResult {
  */
 
 let walletArray = [50:15, 100:25, 500:5, 1000:6, 5000:4]
-var sum = 0
+
 
 func howMuchMoneyInMyWallet (array: [Int:Int]) -> Int {
+    var sum = 0
     for (key, value) in array {
         sum += (key * value)
     }
@@ -135,4 +136,6 @@ print("\nСписок из \(modTwo.count) элементов, которые н
 print(modTwo)
 print("\nСписок из \(modThree.count) элементов, которые не делятся на 3:")
 print(modThree)
+
+
 
