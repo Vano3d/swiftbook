@@ -67,7 +67,6 @@ print("Orange has \(orange.color) color and \(orange.taste) taste. The volume of
  Oбъявите в классе методы `squareOfShape` и `perimeterOfShape` для расчетов площади и периметра (длины) фигуры соответственно. Методы должены возвращать `Float`. Создайте отдельный инициализатор для высоты и ширины и отдельный инициализатор для радиуса. Так же создайте свойство `description`, которое должно возвращать сообщение следующего вида: «Площадь фигуры <тип фигуры> равна <... >, периметр (длина) равен(а) <...>»
  */
 class Shape {
-    var figure: String = ""
     var height: Float = 0.0
     var width: Float = 0.0
     var radius: Float = 0
@@ -174,7 +173,6 @@ class Employee {
 //: 3.2 Создайте массив `names` со следующими именами: *John*, *Aaron*, *Tim*, *Ted*, *Steven*. И еще один массив `surnames` со следующими фамилиями: *Smith*, *Dow*, *Isaacson*, *Pennyworth*, *Jankins*. Массивы должны быть созданы вне класса.
 let names = ["John", "Aaron", "Tim", "Ted", "Steven"]
 let surnames = ["Smith", "Dow", "Isaacson", "Pennyworth", "Jankins"]
-
 
 
 //: 3.3 Объявите массив `employees` и создайте цикл, в котором он заполняется десятью объектами класса `Employee` таким образом, что свойства `name` и `surname` инициализируются случайными именами и фамилиями из массивов `names` и `surnames`, соответственно. Свойство `salary` (зарплата) тоже должно генерироваться в случайном диапазоне от *$1000* до *$2000*
