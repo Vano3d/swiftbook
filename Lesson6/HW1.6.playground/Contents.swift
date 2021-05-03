@@ -34,7 +34,7 @@ class Orange {
         self.radius = radius
     }
     
-    func calculateOrangeVolume(_ :Double) -> Double {
+    private func calculateOrangeVolume(_ :Double) -> Double {
         4 / 3 * Double.pi * pow(Double(radius),3)
     }
     
@@ -129,6 +129,7 @@ class Rectangle: Shape {
 
 }
 
+
 class Ellipce: Shape {
     override func squareOfShape() -> Float {
         Float.pi * width * height
@@ -151,7 +152,7 @@ print(rectangle.description)
 let ellipce = Ellipce(height: 5, width: 7)
 print(ellipce.description)
 
- 
+
 /*:
  ## Задание 3
  3.1 Создайте класс `Employee` (сотрудник) со следующими свойствами:
@@ -167,7 +168,7 @@ class Employee {
     var surname: String
     var salary: Int
     
-    init(_ name: String,_ surname: String,_ salary: Int) {
+    init(name: String, surname: String, salary: Int) {
         self.name = name
         self.surname = surname
         self.salary = salary
@@ -188,7 +189,7 @@ for _ in 0...9 {
     let randNames = names.randomElement()!
     let randSurNames = surnames.randomElement()!
     let randSalary = Int.random(in: 1000...2000)
-    let newEmployee = Employee(randNames, randSurNames, randSalary)
+    let newEmployee = Employee(name: randNames, surname: randSurNames, salary: randSalary)
     employees.append(newEmployee)
 }
 
@@ -205,7 +206,7 @@ var evenEmployees = [Employee]()
 
 for employee in employees {
     if employee.salary % 2 == 0 {
-        let evenEmployee = Employee(employee.name, employee.surname, employee.salary)
+        let evenEmployee = Employee(name: employee.name, surname: employee.surname, salary: employee.salary)
         evenEmployees.append(evenEmployee)
         print("\(evenEmployee.name) \(evenEmployee.surname) salary is \(evenEmployee.salary)")
     }
