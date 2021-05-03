@@ -34,9 +34,10 @@ class Orange {
         self.radius = radius
     }
     
-    func calculateOrangeVolume(_ radius: Double) -> Double {
+    func calculateOrangeVolume(_ :Double) -> Double {
         4 / 3 * Double.pi * radius * radius * radius
     }
+    
     var orangeVolume: Double {
         calculateOrangeVolume(radius)
        }
@@ -44,10 +45,14 @@ class Orange {
 }
 
 let orange = Orange(radius: 7.2)
+
 orange.color = "Orange"
 orange.taste = "Sweet"
 
+
+
 print("Orange has \(orange.color) color and \(orange.taste) taste. The volume of orange is \(orange.orangeVolume)")
+
 
 
 /*:
