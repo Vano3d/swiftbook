@@ -100,7 +100,7 @@ class Shape {
     }
     
     var description: String {
-        "\nПлощадь фигуры \(type(of: self)) равна \(square), периметр (длина) равен(а) \(perimeter)\n"
+        "\nПлощадь фигуры \(Self.self) равна \(square), периметр (длина) равен(а) \(perimeter)\n"
     }
 }
 
@@ -113,7 +113,6 @@ class Circle: Shape {
         }
     override func perimeterOfShape() -> Float {
         radius * Float.pi * 2
-    
     }
 }
 
@@ -164,9 +163,9 @@ print(ellipce.description)
  - `surname`
  */
 class Employee {
-    var name: String
-    var surname: String
-    var salary: Int
+    let name: String
+    let surname: String
+    let salary: Int
     
     init(name: String, surname: String, salary: Int) {
         self.name = name
@@ -183,13 +182,13 @@ let surnames = ["Smith", "Dow", "Isaacson", "Pennyworth", "Jankins"]
 
 //: 3.3 Объявите массив `employees` и создайте цикл, в котором он заполняется десятью объектами класса `Employee` таким образом, что свойства `name` и `surname` инициализируются случайными именами и фамилиями из массивов `names` и `surnames`, соответственно. Свойство `salary` (зарплата) тоже должно генерироваться в случайном диапазоне от *$1000* до *$2000*
 
-var employees = [Employee]()
+var employees = [Employee] = []
 
 for _ in 0...9 {
-    let randNames = names.randomElement()!
-    let randSurNames = surnames.randomElement()!
+    let randNames = names.randomElement()
+    let randSurNames = surnames.randomElement()
     let randSalary = Int.random(in: 1000...2000)
-    let newEmployee = Employee(name: randNames, surname: randSurNames, salary: randSalary)
+    let newEmployee = Employee(name: randNames ?? "", surname: randSurNames ?? "", salary: randSalary)
     employees.append(newEmployee)
 }
 
@@ -202,7 +201,7 @@ for employee in employees {
 
 //: 3.5 Создайте еще один массив на основе `employees`, который включает только тех работников, чья зарплата чётная. Выведите информацию по каждому сотруднику с четной зарплатой, как в пункте 3.4
 print("\n")
-var evenEmployees = [Employee]()
+var evenEmployees: [Employee] = []
 
 for employee in employees {
     if employee.salary % 2 == 0 {
