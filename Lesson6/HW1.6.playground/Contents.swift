@@ -35,7 +35,7 @@ class Orange {
     }
     
     func calculateOrangeVolume(_ :Double) -> Double {
-        4 / 3 * Double.pi * radius * radius * radius
+        4 / 3 * Double.pi * pow(Double(radius),3)
     }
     
     var orangeVolume: Double {
