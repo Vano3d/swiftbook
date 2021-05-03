@@ -72,9 +72,10 @@ print("Orange has \(orange.color) color and \(orange.taste) taste. The volume of
  Oбъявите в классе методы `squareOfShape` и `perimeterOfShape` для расчетов площади и периметра (длины) фигуры соответственно. Методы должены возвращать `Float`. Создайте отдельный инициализатор для высоты и ширины и отдельный инициализатор для радиуса. Так же создайте свойство `description`, которое должно возвращать сообщение следующего вида: «Площадь фигуры <тип фигуры> равна <... >, периметр (длина) равен(а) <...>»
  */
 class Shape {
-    var height: Float = 0.0
-    var width: Float = 0.0
+    var height: Float = 0
+    var width: Float = 0
     var radius: Float = 0
+    
     var square: Float {
         squareOfShape()
     }
@@ -101,7 +102,6 @@ class Shape {
     var description: String {
         "\nПлощадь фигуры \(type(of: self)) равна \(square), периметр (длина) равен(а) \(perimeter)\n"
     }
-    
 }
 
 /*:
