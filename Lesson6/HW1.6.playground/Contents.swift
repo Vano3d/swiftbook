@@ -182,7 +182,7 @@ let surnames = ["Smith", "Dow", "Isaacson", "Pennyworth", "Jankins"]
 
 //: 3.3 Объявите массив `employees` и создайте цикл, в котором он заполняется десятью объектами класса `Employee` таким образом, что свойства `name` и `surname` инициализируются случайными именами и фамилиями из массивов `names` и `surnames`, соответственно. Свойство `salary` (зарплата) тоже должно генерироваться в случайном диапазоне от *$1000* до *$2000*
 
-var employees = [Employee] = []
+var employees: [Employee] = []
 
 for _ in 0...9 {
     let randNames = names.randomElement()
