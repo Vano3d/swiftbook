@@ -14,7 +14,6 @@ enum CalculationType: String {
 }
 
 
-
 //: 1.2 Напишите функцию возвращающую `Int` и принимающую в качестве параметров три значения: число один, число два и тип математической операции. Внутри функции, в зависимости от значения параметра `CalculationType` выполните соответствующую математическую операцию с константами и верните результат. Реализуйте функцию таким образом, что бы при каждом её вызове на консоль выводилось сообщение следующего содержания: «Результат сложения (вычитания, деления, умножения) <…> и <…> равен <…>».
 var operation = CalculationType.addition
 
@@ -57,9 +56,9 @@ definition(numberOne: 12, numberTwo: 3, operType: CalculationType.division)
  Доллар должен иметь на один ассоциативный параметр больше, в соответствии с перечислением `DollarCountrys`.
  */
 enum CurrencyUnit {
-    case rouble (countryPresence: [String], currenceAbbr: String)
-    case dollar (countryPresence: [String], currenceAbbr: String, emit: DollarCountrys)
-    case euro (countryPresence: [String], currenceAbbr: String)
+    case rouble (countries: [String], currenceAbbr: String)
+    case dollar (countries: [String], currenceAbbr: String, emit: DollarCountrys)
+    case euro (countries: [String], currenceAbbr: String)
     enum DollarCountrys {
         case usa
         case canada
@@ -71,9 +70,9 @@ enum CurrencyUnit {
 
  2.2 Создайте экземпляр `dollarCurrency` и присвойете ему значения относящиеся к доллару.
  */
-let dollarCurrency = CurrencyUnit.dollar(countryPresence: ["USA", "Zimbabwe", "Guam", "Palau", "Equador"], currenceAbbr: "USD", emit: .usa)
-let russianCurrency = CurrencyUnit.rouble(countryPresence: ["Россия", "Абхазия"], currenceAbbr: "руб.")
-let euroCurrency = CurrencyUnit.euro(countryPresence: ["Germany", "France", "Spain", "Italy"], currenceAbbr: "euro")
+let dollarCurrency = CurrencyUnit.dollar(countries: ["USA", "Zimbabwe", "Guam", "Palau", "Equador"], currenceAbbr: "USD", emit: .usa)
+let russianCurrency = CurrencyUnit.rouble(countries: ["Россия", "Абхазия"], currenceAbbr: "руб.")
+let euroCurrency = CurrencyUnit.euro(countries: ["Germany", "France", "Spain", "Italy"], currenceAbbr: "euro")
 
 /*: 2.3 Создайте функцию, которая должна принимать валюту и выводить на консоль информацию о ней, например: "Доллар США. Катируется в: США, Доминикана, Куба. Краткое наименование: USD. Для рубля и евро нужно будет определить только список стран и аббривиатуру валюты.
 */
@@ -84,12 +83,12 @@ func money(currency: CurrencyUnit) -> () {
     
     switch currency {
 
-    case .rouble(let countryPresence,let currenceAbbr):
-        print("Российский рубль. Котируется в: \(countryPresence). Краткое наименование: \(currenceAbbr)")
-    case .dollar(let countryPresence, let currenceAbbr, let emit):
-        print("Американский доллар. Котируется в: \(countryPresence). Краткое наименование: \(currenceAbbr). Страна-эмитент: \(emit)")
-    case .euro(let countryPresence, let currenceAbbr):
-        print("Евро. Котируется в: \(countryPresence). Краткое наименование: \(currenceAbbr)")
+    case .rouble(let countries,let currenceAbbr):
+        print("Российский рубль. Котируется в: \(countries). Краткое наименование: \(currenceAbbr)")
+    case .dollar(let countries, let currenceAbbr, let emit):
+        print("Американский доллар. Котируется в: \(countries). Краткое наименование: \(currenceAbbr). Страна-эмитент: \(emit)")
+    case .euro(let countries, let currenceAbbr):
+        print("Евро. Котируется в: \(countries). Краткое наименование: \(currenceAbbr)")
     }
     
 }
