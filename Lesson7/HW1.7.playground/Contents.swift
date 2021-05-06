@@ -15,26 +15,34 @@ enum CalculationType: String {
 
 
 //: 1.2 Напишите функцию возвращающую `Int` и принимающую в качестве параметров три значения: число один, число два и тип математической операции. Внутри функции, в зависимости от значения параметра `CalculationType` выполните соответствующую математическую операцию с константами и верните результат. Реализуйте функцию таким образом, что бы при каждом её вызове на консоль выводилось сообщение следующего содержания: «Результат сложения (вычитания, деления, умножения) <…> и <…> равен <…>».
+
+
 var operation = CalculationType.addition
 
 func definition(numberOne: Int, numberTwo: Int, operType: CalculationType) -> Int {
     
     var result: Int
     
+    if numberTwo == 0 {
+        print("ойц! на ноль делить нельзя!")
+        return numberTwo
+    }
+    
     switch operType {
-
+    
     case .addition:
         result = numberOne + numberTwo
     case .substraction:
         result = numberOne - numberTwo
-    case .division:
-        result = numberOne / numberTwo
     case .multiplication:
         result = numberOne * numberTwo
+    case .division:
+        result = numberOne / numberTwo
     }
+    
     print("Результат \(operType.rawValue) \(numberOne) и \(numberTwo) равен \(result)\n")
     return result
-
+    
 }
 
  
@@ -42,7 +50,7 @@ func definition(numberOne: Int, numberTwo: Int, operType: CalculationType) -> In
 definition(numberOne: 12, numberTwo: 3, operType: CalculationType.addition)
 definition(numberOne: 5, numberTwo: -3, operType: CalculationType.substraction)
 definition(numberOne: 12, numberTwo: 4, operType: CalculationType.multiplication)
-definition(numberOne: 12, numberTwo: 3, operType: CalculationType.division)
+definition(numberOne: 12, numberTwo: 5, operType: CalculationType.division)
 
 
 /*:
