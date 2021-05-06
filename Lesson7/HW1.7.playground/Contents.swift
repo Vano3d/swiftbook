@@ -19,16 +19,13 @@ enum CalculationType: String {
 
 var operation = CalculationType.addition
 
-func definition(numberOne: Int, numberTwo: Int, operType: CalculationType) -> Int {
+func definition(numberOne: Int, numberTwo: Int, operType: CalculationType) -> Int? {
     
     var result: Int
     
-    if numberTwo == 0 {
-        print("ойц! на ноль делить нельзя!")
-        return numberTwo
-    }
     
     switch operType {
+    
     
     case .addition:
         result = numberOne + numberTwo
@@ -37,7 +34,12 @@ func definition(numberOne: Int, numberTwo: Int, operType: CalculationType) -> In
     case .multiplication:
         result = numberOne * numberTwo
     case .division:
-        result = numberOne / numberTwo
+        if numberTwo != 0 {
+            result = numberOne / numberTwo
+        } else {
+            print("ойц! на ноль делить нельзя!")
+            return nil
+        }
     }
     
     print("Результат \(operType.rawValue) \(numberOne) и \(numberTwo) равен \(result)\n")
@@ -45,13 +47,11 @@ func definition(numberOne: Int, numberTwo: Int, operType: CalculationType) -> In
     
 }
 
- 
 //: 1.3 Вызовите эту функцию четыре раза для каждого математического оператора в отдельности.
-definition(numberOne: 12, numberTwo: 3, operType: CalculationType.addition)
-definition(numberOne: 5, numberTwo: -3, operType: CalculationType.substraction)
-definition(numberOne: 12, numberTwo: 4, operType: CalculationType.multiplication)
-definition(numberOne: 12, numberTwo: 5, operType: CalculationType.division)
-
+definition(numberOne: 12, numberTwo: 3, operType: .addition)
+definition(numberOne: 5, numberTwo: -3, operType: .substraction)
+definition(numberOne: 12, numberTwo: 4, operType: .multiplication)
+definition(numberOne: 12, numberTwo: 0, operType: .division)
 
 /*:
  ## Задание 2
@@ -64,7 +64,7 @@ definition(numberOne: 12, numberTwo: 5, operType: CalculationType.division)
  Доллар должен иметь на один ассоциативный параметр больше, в соответствии с перечислением `DollarCountrys`.
  */
 enum CurrencyUnit {
-    case rouble (countries: [String], currenceAbbr: String)
+    case rouble (countries: [String], currenceAbbr: String) 
     case dollar (countries: [String], currenceAbbr: String, emit: DollarCountrys)
     case euro (countries: [String], currenceAbbr: String)
     enum DollarCountrys {
@@ -136,4 +136,6 @@ var chess = ChessPlayer(name: "James", wins: 2)
 print(chess.description)
 chess.addWins(4)
 print(chess.description)
+
+
 
