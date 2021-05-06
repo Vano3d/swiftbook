@@ -108,14 +108,14 @@ money(currency: euroCurrency)
  Так же необходимо реализовать метод `addWins` который должен увеличивать количество побед на переданное в него значение.
   */
 struct ChessPlayer {
-    var name: String
+    let name: String
     var wins: Int
     var description: String {
         return "\(name): \(wins) wins"
     }
     
-    mutating func addWins() {
-        wins += wins
+    mutating func addWins(_ addwins: Int) {
+        wins += addwins
     }
 }
 
@@ -126,6 +126,6 @@ print("\n")
 var chess = ChessPlayer(name: "James", wins: 2)
 
 print(chess.description)
-chess.addWins()
+chess.addWins(4)
 print(chess.description)
 
