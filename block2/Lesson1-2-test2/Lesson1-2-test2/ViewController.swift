@@ -22,6 +22,8 @@ class ViewController: UIViewController {
     }
     var colorState = WhichColor.red
     
+    var clickCount = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         lightRed.alpha = 0.2
@@ -32,11 +34,22 @@ class ViewController: UIViewController {
         lightYellow.layer.cornerRadius = 45
         lightGreen.layer.cornerRadius = 45
         
+        buttonStart.setTitleColor(UIColor.white, for: .normal)
+        
+        
     
     }
 
     @IBAction func tappedButtonStart(_ sender: Any) {
+        clickCount += 1
+        
         buttonStart.setTitle("Next", for: .normal)
+        
+        if clickCount >= 10 {
+            buttonStart.setTitle("Хватит!", for: .normal)
+            
+        }
+        
         lightRed.alpha = 0.2
         lightYellow.alpha = 0.2
         lightGreen.alpha = 0.2
@@ -49,7 +62,7 @@ class ViewController: UIViewController {
             lightYellow.alpha = 1
             colorState = .green
         default:
-            lightGreen.alpha = 1
+            lightGreen.alpha = 1 
             colorState = .red
         }
         
