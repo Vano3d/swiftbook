@@ -31,11 +31,27 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="364" id="5Mp-Nc-oLj"/>
+                                    <constraint firstAttribute="height" constant="170" id="ETO-eg-YkW"/>
                                     <constraint firstAttribute="height" constant="160" id="jaP-y2-ZSv"/>
+                                    <constraint firstAttribute="width" constant="364" id="jtQ-j3-vkg"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ETO-eg-YkW"/>
+                                        <exclude reference="jtQ-j3-vkg"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="5Mp-Nc-oLj"/>
+                                        <include reference="ETO-eg-YkW"/>
+                                        <exclude reference="jaP-y2-ZSv"/>
+                                        <include reference="jtQ-j3-vkg"/>
+                                    </mask>
+                                </variation>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="8J9-7S-SOi">
-                                <rect key="frame" x="25" y="317" width="364" height="186"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8J9-7S-SOi">
+                                <rect key="frame" x="25" y="302" width="364" height="180"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="TAY-gA-abc">
                                         <rect key="frame" x="0.0" y="0.0" width="364" height="30"/>
@@ -68,7 +84,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="KWU-yW-roo">
-                                        <rect key="frame" x="0.0" y="52" width="364" height="30"/>
+                                        <rect key="frame" x="0.0" y="50" width="364" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uj6-jy-plY">
                                                 <rect key="frame" x="0.0" y="0.0" width="51" height="30"/>
@@ -98,7 +114,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="15f-3Y-mpu">
-                                        <rect key="frame" x="0.0" y="104" width="364" height="30"/>
+                                        <rect key="frame" x="0.0" y="100" width="364" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blue:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahS-Wl-7xS">
                                                 <rect key="frame" x="0.0" y="0.0" width="38" height="30"/>
@@ -128,7 +144,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="44" translatesAutoresizingMaskIntoConstraints="NO" id="JIn-hq-Xqt">
-                                        <rect key="frame" x="0.0" y="156" width="364" height="30"/>
+                                        <rect key="frame" x="0.0" y="150" width="364" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opacity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOU-sO-GFu">
                                                 <rect key="frame" x="0.0" y="0.0" width="59" height="30"/>
@@ -149,20 +165,61 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="RZ2-uK-Lqh"/>
+                                    <constraint firstAttribute="width" constant="368" id="b0u-7b-GJA"/>
                                     <constraint firstAttribute="width" constant="364" id="sid-EI-THt"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="RZ2-uK-Lqh"/>
+                                        <exclude reference="b0u-7b-GJA"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="RZ2-uK-Lqh"/>
+                                        <include reference="b0u-7b-GJA"/>
+                                        <exclude reference="sid-EI-THt"/>
+                                    </mask>
+                                </variation>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.29424445371570457" green="0.4618714687435248" blue="0.68169804209999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.38123170388767313" green="0.55972301028845095" blue="0.60366217656569043" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="Qrd-25-cuv" firstAttribute="top" secondItem="Wg5-mo-V7d" secondAttribute="bottom" constant="20" id="10c-gF-22W"/>
+                            <constraint firstItem="8J9-7S-SOi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1z0-cq-yAa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8J9-7S-SOi" secondAttribute="trailing" constant="30" id="Gsr-wm-PaH">
+                                <variation key="heightClass=compact" constant="15"/>
+                            </constraint>
                             <constraint firstItem="Qrd-25-cuv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NJA-Up-mcN"/>
                             <constraint firstItem="Wg5-mo-V7d" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Nfp-qT-oJV"/>
-                            <constraint firstItem="8J9-7S-SOi" firstAttribute="top" secondItem="Qrd-25-cuv" secondAttribute="bottom" constant="45" id="PuY-1Z-x2O"/>
+                            <constraint firstItem="8J9-7S-SOi" firstAttribute="top" secondItem="Qrd-25-cuv" secondAttribute="bottom" constant="30" id="PuY-1Z-x2O"/>
+                            <constraint firstItem="Qrd-25-cuv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fTV-0W-b6w"/>
+                            <constraint firstItem="Qrd-25-cuv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="mag-aL-B7Z"/>
                             <constraint firstItem="Wg5-mo-V7d" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="18" id="owH-5V-0hU"/>
                             <constraint firstItem="8J9-7S-SOi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qag-yZ-wch"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Gsr-wm-PaH"/>
+                                <exclude reference="fTV-0W-b6w"/>
+                                <exclude reference="mag-aL-B7Z"/>
+                                <exclude reference="1z0-cq-yAa"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <include reference="Gsr-wm-PaH"/>
+                                <exclude reference="10c-gF-22W"/>
+                                <exclude reference="NJA-Up-mcN"/>
+                                <include reference="fTV-0W-b6w"/>
+                                <include reference="mag-aL-B7Z"/>
+                                <include reference="1z0-cq-yAa"/>
+                                <exclude reference="PuY-1Z-x2O"/>
+                                <exclude reference="qag-yZ-wch"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="sliderBlue" destination="J1R-Bm-9Ja" id="nvV-mK-la1"/>
