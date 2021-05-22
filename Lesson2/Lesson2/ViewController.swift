@@ -23,9 +23,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         
+        
         viewColor.layer.cornerRadius = 20
         viewColor.layer.masksToBounds = true
+        
         viewColor.backgroundColor = UIColor(red: CGFloat(sliderRed.value), green: CGFloat(sliderGreen.value), blue: CGFloat(sliderBlue.value), alpha: CGFloat(sliderOpacity.value))
         
     }
@@ -37,8 +38,6 @@ class ViewController: UIViewController {
         viewColor.backgroundColor = UIColor(red: CGFloat(sliderRed.value), green: CGFloat(sliderGreen.value), blue: CGFloat(sliderBlue.value), alpha: CGFloat(sliderOpacity.value))
         
     }
-    
-    
     
 }
 
